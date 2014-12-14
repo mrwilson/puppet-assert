@@ -18,3 +18,13 @@ source puppet-assert.sh
   mkdir -p ${NAME}
   assertFile ${NAME} hasType directory
 }
+
+@test "File :: should fail on unexpected input :: no such file" {
+  ! assertFile "does_not_exist" hasType file
+}
+
+@test "File :: should fail on unexpected input :: bad type" {
+  NAME=${BATS_TMPDIR}/${BATS_TEST_NUMBER}
+  touch ${NAME}
+  ! assertFile ${NAME} hasType "not_a_type"
+}
