@@ -1,2 +1,2 @@
 script: make test
-before_install: sudo apt-get install puppet-common jq
+before_install: sudo apt-get install jq
