@@ -18,3 +18,7 @@ assertFile() {
 hasMode () {
   has mode $1
 }
+
+hasType () {
+  has type $1
+}
